@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/173288243b.js" crossorigin="anonymous"></script>
+    <style>
+      body {
+        text-align: center;
+        
+      }
+      h1 {
+        font-size: 40px;
+        color: #1a64d5;
+      }
+      h2 {
+        font-size: 40px;
+      }
+      ul {
+        font-size: 20px;
+        font-weight: 70;
+        list-style-type: none
+      }
+      button {
+        background: #1a64d9 ;
+        color: white;
+        display: block;
+        font-size: 14px;
+        margin: 0 auto 30px;
+        padding: 10px 20px;
+        border-radius: 30px;
+        box-shadow: none;
+        transition: all 200ms ease-in-out;
+      }
+      .first-degree {
+        font-weight: 100;
+      }
+      .header-degree {
+        margin-top: -20px;
+      }
+      .general {
+        padding-right: 30px;
+      }
+      .Tomorrow {
+        margin: 18px;
+        padding: 0px;
+        transition: 150ms ;
+      }
+      .Saturday {
+        margin: 4px;
+        padding: 0px;
+        transition: 150ms;
+      }
+      .Sunday {
+        margin: 4px;
+        padding: 0px;
+        transition: 150ms;
+      }
+      .Tomorrow:hover {
+        background-color: #fffbef;
+      }
+      .Saturday:hover {
+        background-color: #fffbef;
+      }
+      .Sunday:hover {
+        background-color: #fffbef;
+      }
+      button:hover {
+        background: white;
+        color: #1a64d9;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+  <div class="header">
+    <h1 class="emoji">
+      
+      <i id="emoji-icon" class="fa-solid fa-cloud-sun" style="color: #1a64d6;"></i>
+    </h1>
+<h1 class="Town">
+    Currently 21&#176; in Tokyo
+    </h1>
+    <h2 class="header-degree">
+      <span class="first-degree">13&#176;</span>  / 23&#176;</h2>
+      </div>
+    <div class="general">
+    <div class="Tomorrow">
+    <ul>
+        <li>
+          <h3>
+            <i class="fa-solid fa-cloud-rain" style="color: #000000;"></i>
+            Tomorrow
+          </h3>
+          </li>
+        <p> 10&#176; / <strong>22&#176;
+          </strong>
+        </p>
+        </ul>
+        </div>
+      <div class="Saturday">
+      <ul>
+        <li>
+    <h3> 
+      <i class="fa-solid fa-cloud-moon fa-xs" style="color: #000000;"></i>
+      Saturday
+    </h3>
+    </li>
+    <p> 15&#176; / 
+      <strong>17&#176;
+        </strong>
+      </p>
+    </ul>
+    </div>
+    <div class="Sunday">
+    <ul>
+      <li>
+    <h3>
+      <i class="fa-solid fa-sun fa-xs" style="color: #fce100;"></i>
+      Sunday
+    </h3>
+    </li>
+    <p> 25&#176; / 
+      <strong>28&#176;
+      </strong>
+    </p>
+    </ul>
+    </div>
+    </div>
+    <button> Change City</button>
+    <span>
+      Coded by DohktorS
+    </span>
+    
+    <script>
+      function changeCity() {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");
+        let heading = document.querySelector(".Town");
+        let emojiIcon = document.getElementById("emoji-icon");
+
+        if (temperature >= 0) {
+          heading.innerHTML = "Currently " + temperature + "&#176;" + " " + "in " + city;
+          emojiIcon.className = "far fa-smile";
+        } else {
+          heading.innerHTML = "Currently " + temperature + "&#176;" + " " + "in " + city;
+          emojiIcon.className = "far fa-frown";
+        }
+      }
+        let changeCityButton = document.querySelector("button");
+        changeCityButton.addEventListener("click", changeCity);
+      
+    </script>
+</body>
+</html>
